@@ -9,13 +9,15 @@ function ExpenseItem(props) {
   // const expenseDate = new Date(2021, 2, 28);
   // const expenseTitle = 'Car insurance';
   // const expenseAmount = 294.67;
-  useState();
+  const [title, setTitle] = useState(props.title);
 
-  let title = props.title;
+  // let title = props.title;
 
   const clickHandler = () => {
-    console.log('clicked!');
-    title = 'updated';
+    setTitle('Updated');
+    // console.log('clicked!');
+    
+    // title = 'updated';
   };
 
   return (
