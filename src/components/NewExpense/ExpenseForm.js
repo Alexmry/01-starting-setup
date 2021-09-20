@@ -17,9 +17,12 @@ const ExpenseForm = () => {
     // console.log('title changed')
     // console.log(event.target.value);
     // setEnteredTtile(event.target.value);
-    setUserInput({
-      ...userInput,
-      enteredTitle: event.target.value,
+    // setUserInput({
+    //   ...userInput,
+    //   enteredTitle: event.target.value,
+    // });
+    setUserInput((prevState) => {
+        return { ...prevState, enteredTitle: event.target.value };
     });
   };
 
