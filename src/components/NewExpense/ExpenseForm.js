@@ -4,14 +4,14 @@ import "./ExpenseForm.css";
 // import { useState } from "react/cjs/react.development";
 
 const ExpenseForm = () => {
-    const [enteredTitle, setEnteredTtile] = useState("");
-    const [entereAmount, setEnteredAmount] = useState("");
-    const [entereDate, setEnteredDate] = useState("");
-//   const [userInput, setUserInput] = useState({
-//     enteredTitle: "",
-//     enteredAmount: "",
-//     enteredDate: "",
-//   });
+  const [enteredTitle, setEnteredTtile] = useState("");
+  const [entereAmount, setEnteredAmount] = useState("");
+  const [entereDate, setEnteredDate] = useState("");
+  //   const [userInput, setUserInput] = useState({
+  //     enteredTitle: "",
+  //     enteredAmount: "",
+  //     enteredDate: "",
+  //   });
 
   const titleChangeHandler = (event) => {
     // console.log('title changed')
@@ -42,8 +42,19 @@ const ExpenseForm = () => {
     // });
   };
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const expenseData = {
+      title: enteredTitle,
+      amount: entereAmount,
+      date: new Date(entereDate),
+    };
+    console.log(expenseData);
+  };
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
